@@ -14,6 +14,7 @@ import { Flex } from './views/Flex';
 import { View } from 'react-native';
 import { FlexDirection } from './views/FlexDirection';
 import { FlexExcercises } from './views/FlexExercises';
+import { Calculator } from './views/Calculator';
 
 function App(): React.JSX.Element {
   
@@ -25,8 +26,9 @@ function App(): React.JSX.Element {
       <Bom  />
       <Position />
       <Flex />
-      <FlexDirection />*/}
-      <FlexExcercises />
+      <FlexDirection />
+      <FlexExcercises />*/}
+      <Calculator />
     </View>
   );
 }
