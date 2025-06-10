@@ -15,22 +15,29 @@ import { View } from 'react-native';
 import { FlexDirection } from './views/FlexDirection';
 import { FlexExcercises } from './views/FlexExercises';
 import { Calculator } from './views/Calculator';
+import { NavigationContainer } from '@react-navigation/native';
+import { StackNavigation } from './routes/StackNavigation';
 
 function App(): React.JSX.Element {
   
   
   return (
-    <View style={{flex: 1}}>
-      { /* <HelloWorld name="IDAT"/> 
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+
+    {/*<View style={{flex: 1}}>
+       <HelloWorld name="IDAT"/> 
       <CounterApp />
       <Bom  />
       <Position />
       <Flex />
       <FlexDirection />
-      <FlexExcercises />*/}
+      <FlexExcercises />
       <Calculator />
-    </View>
-  );
-}
-
-export default App;
+    </View>*/}

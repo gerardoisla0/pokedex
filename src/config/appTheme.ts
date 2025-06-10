@@ -1,23 +1,5 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'grey',
-    },
-    title:{
-        fontSize: 25,
-        textAlign: 'center',
-        color: 'white'
-    },
-    button:{
-        backgroundColor: '#5856D6',
-        padding: 10,
-        borderRadius: 10,
-    }
-});
 
 export const colors = {
     darkGray: '#2D2D2D',
@@ -26,6 +8,40 @@ export const colors = {
     backgroundColor: 'black',
     resultColor: '#FFFFFF'
 }
+
+export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        paddingTop: 20,
+        alignItems: 'center',
+        backgroundColor: 'white',
+        
+    },
+    title:{
+        fontSize: 25,
+        textAlign: 'center',
+        color: 'black'
+    },
+    button:{
+        backgroundColor: '#5856D6',
+        padding: 10,
+        borderRadius: 10,
+        margin:10
+    },
+    buttonText:{
+        color: 'white'
+    },
+    imagePokemon:{
+        width: 50,
+        height: 50
+    },
+    containerPokemon:{
+        flex: 1,
+        padding: 20,
+        alignItems: 'center'
+    }
+});
 
 export const calculatorStyles = StyleSheet.create({
     container: {
