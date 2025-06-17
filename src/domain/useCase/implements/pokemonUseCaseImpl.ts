@@ -2,14 +2,14 @@ import { PokemonRepositoryImpl } from "../../../data/repositories/pokemonReposit
 import { Pokemon } from "../../entities/pokemon.entity";
 import { PokemonUseCase } from "../pokemon.usecase";
 
-const {getPokemons} = new PokemonRepositoryImpl();
+const {getPokemons, getPokemonsbyId} = new PokemonRepositoryImpl();
 
 export class PokemonUseCaseImpl implements PokemonUseCase{
 
     GetPokemonsUseCase(): Promise<Pokemon[]> {
         return getPokemons();
     }
-    GetPokemonByIdUseCase(): Promise<Pokemon> {
-        throw new Error("Method not implemented.");
+    GetPokemonByIdUseCase(id: number): Promise<Pokemon> {
+        return getPokemonsbyId(id);
     }
 }

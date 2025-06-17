@@ -1,12 +1,15 @@
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react'
-import { View, Text, Image, Pressable } from 'react-native'
+import { View, Image, Pressable } from 'react-native'
 import { RootStackParamList } from '../routes/StackNavigation';
 import { ButtonComponent } from '../components/ButtonComponent';
 import { styles } from '../theme/appTheme';
 import { FlatList } from 'react-native-gesture-handler';
 import { PokemonUseCaseImpl } from '../../domain/useCase/implements/pokemonUseCaseImpl';
 import { Pokemon } from '../../domain/entities/pokemon.entity';
+import { PokemonCard } from '../components/PokemonCard';
+import { PokeballBackground } from '../components/PokeballBackground';
+import { Text } from 'react-native-paper';
 
 //https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
 
@@ -40,24 +43,15 @@ export const PokemonsScreen = () => {
     ];*/
 
   return (
-    <View style={styles.container}>
-           <Text style={[styles.title, {paddingBottom: 20}]}>Lista de Pokemones</Text>
+    <View style={styles.containerScreen}>
+        <PokeballBackground style={styles.imgPositionBackground} />
             <FlatList 
                 data= {pokemons}
+                keyExtractor={(pokemon,index) => pokemon.id+'-'+index}
+                numColumns={2}
+                ListHeaderComponent={ () => <Text variant='displayMedium'>Lista de Pokemones</Text>}
                 renderItem={ ({item}) => (
-                    <Pressable
-                        onPress={() => navigation.navigate('Pokemon', {name: item.name, imageUrl: item.avatar})}
-                    >
-                        <View style={{alignItems: 'center', margin:5}}>
-                            <Image
-                                style={styles.imagePokemon}
-                                source={{
-                                    uri: item.avatar
-                                }}
-                            />
-                            <Text style={styles.title}>{item.name}</Text>
-                        </View>
-                    </Pressable>
+                    <PokemonCard pokemon={item}/>
                  )
                 }
         

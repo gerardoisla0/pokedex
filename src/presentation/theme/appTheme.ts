@@ -15,8 +15,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         paddingTop: 20,
         alignItems: 'center',
-        backgroundColor: 'white',
-        
+        backgroundColor: 'white',        
     },
     title:{
         fontSize: 25,
@@ -40,6 +39,19 @@ export const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         alignItems: 'center'
+    },
+    imgPositionBackground: {
+        position: 'absolute',
+        top: -100,
+        right: -100
+    },
+    containerScreen:{
+       marginHorizontal: 20
+    },
+    titlePokemon:{
+        color: 'white',
+        top: 10,
+        left: 10
     }
 });
 

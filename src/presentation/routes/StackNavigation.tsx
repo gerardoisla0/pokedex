@@ -9,7 +9,7 @@ export type RootStackParamList = {
     Home: undefined;
     Pokemons: undefined;
     Setting: undefined;
-    Pokemon: {name:string, imageUrl: string};
+    Pokemon: {name:string, imageUrl: string, id: number};
 }
 
 const Stack = createStackNavigator<RootStackParamList>();

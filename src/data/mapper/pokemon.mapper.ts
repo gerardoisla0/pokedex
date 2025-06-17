@@ -1,5 +1,6 @@
 import { Pokemon } from "../../domain/entities/pokemon.entity";
 import { PokemonAPI } from "../sources/remote/interfaces/pokeAPI.interface";
+import { PokemonByID } from "../sources/remote/interfaces/pokemonbyId.interface";
 
 export class PokemonMapper {
 
@@ -14,7 +15,17 @@ export class PokemonMapper {
 
         return {
             name: data.name,
-            avatar: getPhoto(data.url)
+            avatar: getPhoto(data.url),
+            id: +getId(data.url)
+        }
+    }
+
+    static pokemonByIDtoPokemonEntity(data: PokemonByID) : Pokemon {
+        
+        return {
+            name: data.name,
+            avatar: data.sprites.other?.["official-artwork"].front_default || '',
+            id: data.id
         }
     }
 }
