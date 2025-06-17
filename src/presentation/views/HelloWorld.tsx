@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { styles } from '../config/appTheme'
+import { styles } from '../theme/appTheme'
 
 interface Props{
     name?: string;

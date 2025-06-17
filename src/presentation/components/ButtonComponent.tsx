@@ -1,6 +1,6 @@
 import React from 'react'
 import { Pressable, Text } from 'react-native'
-import { calculatorStyles, colors, styles } from '../config/appTheme'
+import { calculatorStyles, colors, styles } from '../theme/appTheme'
 
 interface Props{
     label: string;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { calculatorStyles, colors } from '../config/appTheme';
+import { calculatorStyles, colors } from '../theme/appTheme';
 import { CalculatorButton } from '../components/CalculatorButton';
 import { useCalculator } from '../hooks/useCalculator';
 

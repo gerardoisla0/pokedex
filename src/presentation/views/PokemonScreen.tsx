@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
-import { styles } from '../config/appTheme'
+import { styles } from '../theme/appTheme'
 import { RouteProp, useRoute } from '@react-navigation/native'
 import { RootStackParamList } from '../routes/StackNavigation'
 
@@ -17,7 +17,7 @@ export const PokemonScreen = () => {
             }
             style= {{ width: 200, height: 200}}
         />
-        <Text style={styles.title}>{params.id} - {params.name}</Text>
+        <Text style={styles.title}>{params.name}</Text>
     </View>
   )
 }
