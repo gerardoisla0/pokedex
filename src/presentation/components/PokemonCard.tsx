@@ -5,7 +5,7 @@ import { Pokemon } from '../../domain/entities/pokemon.entity'
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../routes/StackNavigation';
 import { Card, Text } from 'react-native-paper';
-import { Position } from '../views/Position';
+import { Position } from '../views/exercices/Position';
 
 interface Props{
     pokemon: Pokemon;
@@ -29,7 +29,7 @@ export const PokemonCard = ({pokemon}:Props) => {
             />
             <Text style={styles.title}>{pokemon.name}</Text>
         </View>*/}
-        <Card style={stylesCard.cardContainer}>
+        <Card style={[stylesCard.cardContainer, {backgroundColor: pokemon.color}]}>
             <Text style={styles.titlePokemon} variant="bodyLarge" lineBreakMode='middle'>
                 {pokemon.name}
             </Text>

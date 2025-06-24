@@ -14,7 +14,8 @@ export class PokemonRepositoryImpl implements PokemonRepository{
             const pokemons = data.results.map( item =>
                 PokemonMapper.pokemonAPItoPokemonEntity(item)
             );
-            return pokemons;
+            
+            return await Promise.all(pokemons);
             
         }catch(error){
             console.log(error);
@@ -22,7 +23,7 @@ export class PokemonRepositoryImpl implements PokemonRepository{
         }
     }
     getPokemonsbyId = async (id: number): Promise<Pokemon> => {
-           try{
+        try{
             const url = '/pokemon/'+id;
             const {data} = await pokeApi.get<PokemonByID>(url);
 

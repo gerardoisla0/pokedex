@@ -1,9 +1,9 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { styles } from '../theme/appTheme'
-import { ButtonComponent } from '../components/ButtonComponent'
+import { styles } from '../../theme/appTheme'
+import { ButtonComponent } from '../../components/ButtonComponent'
 import { NavigationProp, useNavigation } from '@react-navigation/native'
-import { RootStackParamList } from '../routes/StackNavigation'
+import { RootStackParamList } from '../../routes/StackNavigation'
 
 export const HomeScreen = () => {
 

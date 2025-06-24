@@ -1,14 +1,14 @@
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react'
 import { View, Image, Pressable } from 'react-native'
-import { RootStackParamList } from '../routes/StackNavigation';
-import { ButtonComponent } from '../components/ButtonComponent';
-import { styles } from '../theme/appTheme';
+import { RootStackParamList } from '../../routes/StackNavigation';
+import { ButtonComponent } from '../../components/ButtonComponent';
+import { styles } from '../../theme/appTheme';
 import { FlatList } from 'react-native-gesture-handler';
-import { PokemonUseCaseImpl } from '../../domain/useCase/implements/pokemonUseCaseImpl';
-import { Pokemon } from '../../domain/entities/pokemon.entity';
-import { PokemonCard } from '../components/PokemonCard';
-import { PokeballBackground } from '../components/PokeballBackground';
+import { PokemonUseCaseImpl } from '../../../domain/useCase/implements/pokemonUseCaseImpl';
+import { Pokemon } from '../../../domain/entities/pokemon.entity';
+import { PokemonCard } from '../../components/PokemonCard';
+import { PokeballBackground } from '../../components/PokeballBackground';
 import { Text } from 'react-native-paper';
 
 //https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png

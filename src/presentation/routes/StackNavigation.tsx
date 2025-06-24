@@ -1,9 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
-import { HomeScreen } from '../views/HomeScreen';
-import { PokemonsScreen } from '../views/PokemonsScreen';
-import { SettingScreen } from '../views/SettingScreen';
-import { PokemonScreen } from '../views/PokemonScreen';
+import { HomeScreen } from '../views/home/HomeScreen';
+import { PokemonsScreen } from '../views/pokemons/PokemonsScreen';
+import { SettingScreen } from '../views/home/SettingScreen';
+import { PokemonScreen } from '../views/pokemons/PokemonScreen';
 
 export type RootStackParamList = {
     Home: undefined;

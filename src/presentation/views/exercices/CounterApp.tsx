@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Pressable, Text, View } from 'react-native'
-import { styles } from '../theme/appTheme'
+import { styles } from '../../theme/appTheme'
 
 export const CounterApp = () => {
 

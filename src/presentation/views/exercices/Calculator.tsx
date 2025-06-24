@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { calculatorStyles, colors } from '../theme/appTheme';
-import { CalculatorButton } from '../components/CalculatorButton';
-import { useCalculator } from '../hooks/useCalculator';
+import { calculatorStyles, colors } from '../../theme/appTheme';
+import { CalculatorButton } from '../../components/CalculatorButton';
+import { useCalculator } from '../../hooks/useCalculator';
 
 export const Calculator = () => {
 
