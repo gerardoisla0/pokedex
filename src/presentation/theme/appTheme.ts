@@ -6,7 +6,12 @@ export const colors = {
     ligthGray: '#9B9B9B',
     orange: '#FF9427',
     backgroundColor: 'black',
-    resultColor: '#FFFFFF'
+    resultColor: '#FFFFFF',
+    primary: 'purple',
+    dark: 'black',
+    light: 'white',
+    error: 'red',
+    surface: '#c2c2c2',
 }
 
 export const styles = StyleSheet.create({
