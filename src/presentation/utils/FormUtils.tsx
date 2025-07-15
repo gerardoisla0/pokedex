@@ -10,3 +10,8 @@ export const passwordValidator = (password: string) => {
     if (password.length < 5) return "La contraseña debe tener al menos 5 caracteres.";
     return "";
 }
+
+export const nameValidator = (name: string) => {
+    if (!name) return "El email no puede estar vacío.";
+    return "";
+}

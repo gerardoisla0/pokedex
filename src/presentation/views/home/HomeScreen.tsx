@@ -4,10 +4,14 @@ import { styles } from '../../theme/appTheme'
 import { ButtonComponent } from '../../components/ButtonComponent'
 import { NavigationProp, useNavigation } from '@react-navigation/native'
 import { RootStackParamList } from '../../routes/StackNavigation'
+import { useAuth } from '../../hooks/useAuth'
+import { StorageAdapter } from '../../../data/sources/local/storage-adapter'
 
 export const HomeScreen = () => {
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const {status, logout} = useAuth();
+  const email = StorageAdapter.getItem('email') ?? 'No email found';
 
   return (
     <View style={styles.container}>
@@ -20,6 +24,11 @@ export const HomeScreen = () => {
             label= "Ir a Registro"
             actionButton={() => navigation.navigate('Register')}
         />
+         <ButtonComponent 
+            label= "Cerrar Sesión"
+            actionButton={logout}
+        />
+        <Text>{email}</Text>
     </View>
   )
 }

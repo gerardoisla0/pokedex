@@ -1,7 +1,7 @@
 import { Pokemon } from "../../domain/entities/pokemon.entity";
 import { PokemonRepository } from "../../domain/repositories/pokemon.repository";
 import { PokemonMapper } from "../mapper/pokemon.mapper";
-import { pokeApi } from "../sources/remote/apiPokemon";
+import { pokeApi } from "../sources/remote/api/apiPokemon";
 import { PokemonAPI, PokemonResults } from "../sources/remote/interfaces/pokeAPI.interface";
 import { PokemonByID } from "../sources/remote/interfaces/pokemonbyId.interface";
 

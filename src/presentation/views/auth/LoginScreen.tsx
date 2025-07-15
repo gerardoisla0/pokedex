@@ -3,30 +3,65 @@ import { colors } from "../../theme/appTheme";
 import { BackgroundComponent } from "../../components/BackgroundComponent";
 import { useState } from "react";
 import { TextInput } from "../../components/TextInput";
-import { Button } from "react-native-paper";
+import { Button, Dialog, Portal } from "react-native-paper";
 import { emailValidator, passwordValidator } from '../../utils/FormUtils';
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../../routes/StackNavigation";
+import { BackendUseCaseImpl } from "../../../domain/useCase/implements/backendUseCaseImpl";
+import { useAuth } from "../../hooks/useAuth";
 
 export const LoginScreen = () => {
 
+  const {login, checkStatus} = useAuth();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
+  const [message, setMessage] = useState('');
+  const [visible, setVisible] = useState(false);
 
-  const _onLoginPressed = () => {
+  const _onLoginPressed = async () => {
+
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
 
     if (emailError || passwordError) {
       setEmail({ ...email, error: emailError });
       setPassword({ ...password, error: passwordError });
+      return;
+    }
+
+    try {
+      await login(email.value, password.value);
+      const dataRegistered = checkStatus();
+      if (dataRegistered != null){
+          setMessage('Usuario correctamente logueado');
+          showDialog();
+      }
+    }catch(error: any){
+      setMessage(error.message);
+      showDialog();
     }
   }
 
+  const showDialog = () => setVisible(true);
+  const hideDialog = () => setVisible(false);
+
   return (
     <BackgroundComponent>
+      <Portal>
+        <Dialog 
+          visible={visible}
+          onDismiss={hideDialog}>
+            <Dialog.Title>Alert</Dialog.Title>
+            <Dialog.Content>
+              <Text>{message}</Text>
+            </Dialog.Content>
+            <Dialog.Actions>
+              <Button onPress={hideDialog}>Cerrar</Button>
+            </Dialog.Actions>
+        </Dialog>
+      </Portal>
       <Image source={require('../../../../assets/logo.png')} style={styles.image} />
       <Text style={styles.header}>Bienvenido</Text>
       <TextInput 
